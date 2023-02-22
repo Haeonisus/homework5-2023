@@ -1,0 +1,144 @@
+/* Step 1 - Animate Logo */
+@keyframes logo-animate {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1}
+}
+
+#logo {
+    animation: logo-animate 5s;
+}
+
+/* Step 2 - Default mode */
+body {
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+    /* background: url("../images/concrete_seamless.png"), #f1f1f1*/
+}
+
+/* Step 3 - header tag to use flex to match example */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Step 4 - nav_links class */
+.nav_links {
+    flex-direction: column;
+}
+
+/* Step 5 - challenge links */
+a:visited {
+    color: blue;
+}
+
+/* Step 6 - header that are direct children of a card class */
+.card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+/* Step 7 - card class to match example */
+.card {
+    border-radius: 50px 50px 0 0;
+    flex-basis: 450px;
+}
+
+/* Step 8 - pricing class to match example */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Step 9 - style the images in the gallery class */
+.gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Step 10 - gallery class to use flex */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Screen-size is greater than 900px */
+@media screen and (min-width: 900px){
+
+    /* Step 11 - header and nav_links using flex-properties */
+    header, .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Step 12 - pricing and card classes to match example */
+    .pricing, .card {
+        flex-basis: 275px;
+    }
+
+    /* Step 13 - Always visible header */
+    body > header {
+        position: sticky;
+        top: 0px;
+    }
+
+}
+
+/* Reduced Motion Version */
+@media screen and (prefers-reduced-motion: reduce) {
+
+    /* Step 14 - logo is not animated if prefers-reduced-motion is selected */
+    #logo {
+        animation: none;
+    }
+}
+
+/* Page is Printed in Portrait Mode */
+@media print {
+    
+    /* Step 15 & 16 - change font and remove the background image */
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    /* Step 17 - nav/nav_links are spaced according to the image */
+    nav, .nav_links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* Step 18 - pricing class aligns along the bottom */
+    .pricing {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    /* Step 19 - card border and flex-basis */
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    /* Step 20 - No part of the gallery should be visible */
+    .gallery, #gallery {
+        display: none;
+    }
+
+    /* Step 21 - add the thumbs up */
+    .card ul li:nth-child(2)::after {
+        content: "👍";
+    }
+}
