@@ -139,6 +139,6 @@ a:visited {
 
     /* Step 21 - add the thumbs up */
     .card ul li:nth-child(2)::after {
-        content: "👍";
+        content: "\1F44D";
     }
 }
